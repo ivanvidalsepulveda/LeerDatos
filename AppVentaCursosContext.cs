@@ -15,5 +15,10 @@ namespace LeerDatos
 
         
             public DbSet<Curso> Curso{get;set;}
+            public DbSet<Precio> Precio{get;set;}
+
+            public DbSet<Comentarios> Comentarios{get;set;}
+
+
     }
 }

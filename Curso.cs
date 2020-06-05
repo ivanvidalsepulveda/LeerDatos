@@ -2,6 +2,8 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+
 
 namespace LeerDatos
 {
@@ -17,5 +19,11 @@ namespace LeerDatos
 
         public DateTime FechaPublicacion{get;set;}
 
+        public Precio PrecioPromocion {get;set;}
+        public ICollection<Comentarios> ComentarioLista {get;set;}
+
+
+
+
     }
-}
+    }
