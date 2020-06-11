@@ -25,15 +25,28 @@ namespace LeerDatos
 
                     
                 }*/
-
+                        /*
                 var cursos = db.Curso.Include(c => c.ComentarioLista).AsNoTracking();
                 foreach(var curso in cursos){
 
                     Console.WriteLine(curso.Titulo);
                     foreach(var comentario in curso.ComentarioLista){
                         Console.WriteLine("*********"+ comentario.ComentarioTexto);
+
+
+
+
                     }
-                }
+                }  */
+                        var cursos = db.Curso.Include(c=>c.InstructorLink).ThenInclude(ci=>ci.Instructor);
+                        foreach(var curso in cursos){
+
+                            Console.WriteLine("Curso: " +curso.Titulo);
+                            foreach(var insLink in curso.InstructorLink){
+                                    Console.WriteLine("Alumno: " + insLink.Instructor.Nombre + " " +insLink.Instructor.Apellido  + " " + insLink.Instructor.Grado);
+
+                            }
+                        }
                 }
             }
 
